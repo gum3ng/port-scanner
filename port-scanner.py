@@ -8,7 +8,6 @@ if(len(sys.argv)==1):
     sys.exit(0)
 
 def ping(ip):
-    #return os.system(f"ping -q -c 1 {ip} >/dev/null 2>&1")
     res = subprocess.run(["ping", "-c", "1", ip], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     if(res.returncode == 0):
         return True
